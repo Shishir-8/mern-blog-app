@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:5173", // dev
-  "https://mernn-blog.netlify.app/", // production frontend
+  "https://mernn-blog.netlify.app", // production frontend
 ];
 
 app.use(cors({
