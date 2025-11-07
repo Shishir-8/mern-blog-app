@@ -18,6 +18,7 @@ export default function GoogleLogin() {
       console.log("Firebase Token", token)
       const res = await dispatch(googleLogin(token)).unwrap()
       if(res.success) {
+        toast.success("Login Successfull")
         navigate("/")
       }
       

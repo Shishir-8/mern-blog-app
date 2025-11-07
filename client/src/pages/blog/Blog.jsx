@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Blog({ blog }) {
-  const dispatch = useDispatch()
+
   usePageTitle("Blog Home")
   
   const {user} = useSelector((state) => state.auth)
