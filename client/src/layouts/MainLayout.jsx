@@ -4,9 +4,9 @@ import Navbar from "../components/common/Navbar";
 
 export default function MainLayout() {
   return (
-    <div>
+    <div className="min-h-screen">
         <Navbar />
-        <main>
+        <main className="pt-20">
             <Outlet />
         </main>
     </div>

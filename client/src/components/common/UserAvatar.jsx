@@ -17,8 +17,6 @@ export default function UserAvatar() {
 
   const {user, isLoading, isError} = useSelector((state) => state.auth)
  
-  if(isLoading) return <Loader />
-
 
   const handleLogout = async () => {
    try {
@@ -31,8 +29,6 @@ export default function UserAvatar() {
    }
   }
  
-
-
   return (
     <DropdownMenu>
         <DropdownMenuTrigger>

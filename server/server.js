@@ -39,5 +39,11 @@ app.use("/api/auth", authRoutes );
 app.use("/api/blogs", blogRoutes)
 
 
+
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({message: "Server is alive!"})
+})
+
+
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

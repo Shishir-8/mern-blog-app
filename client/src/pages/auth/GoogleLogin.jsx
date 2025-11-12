@@ -1,3 +1,5 @@
+import Loader from '@/components/common/Loader'
+import Spinner from '@/components/common/Spinner'
 import { auth, googleProvider } from '@/firebase'
 import { googleLogin } from '@/redux/auth/authThunk'
 import { signInWithPopup } from 'firebase/auth'
@@ -21,15 +23,20 @@ export default function GoogleLogin() {
         toast.success("Login Successfull")
         navigate("/")
       }
-      
-      
+
     } catch (error) {
       toast.error("Google Login Failed")
     }
   }
 
+    if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <Loader />
+      </div>
+    );
+  }
 
-  
   return (
        <button
        onClick={handleGoogleLogin}

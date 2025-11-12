@@ -7,6 +7,7 @@ import Spinner from "../../components/common/Spinner";
 import { loginUser} from "../../redux/auth/authThunk";
 import GoogleLogin from "./GoogleLogin";
 import usePageTitle from "@/components/common/useMeta";
+import Loader from "@/components/common/Loader";
 
 export default function Login() {
 
@@ -61,15 +62,21 @@ export default function Login() {
         navigate("/")
       } 
     } catch (error) {
-      toast.error(message)
+      toast.error(error?.message || "Login Failed")
     }
   };
 
-
+  if(isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <Loader />
+      </div>
+    )
+  }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-md">
+    <div className="pt-50 min-h-screen bg-gray-50">
+      <div className="max-w-md mx-auto">
         {/* ✅ Only show if non-empty string */}
         {typeof validationError === "string" && validationError.trim().length > 0 && (
           <div className="mb-4 border border-red-300 bg-red-50 text-red-700 rounded-lg p-4 text-sm">

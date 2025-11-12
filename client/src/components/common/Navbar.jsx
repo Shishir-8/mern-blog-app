@@ -4,7 +4,7 @@ import { LogOut, Menu, Search, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import UserAvatar from "./UserAvatar";
 import SearchBar from "../search/SearchBar";
-import usePageTitle from "./useMeta";
+
 
 
 
@@ -17,10 +17,8 @@ const Navbar = () => {
   const {user, isLoading, isError, isSuccess} = useSelector((state)=> state.auth)
 
 
-
-
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white fixed shadow-md  top-0 left-0 right-0 z-50 h-20 flex items-center">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* LEFT: Logo */}
         <Link to="/" className="text-2xl font-bold">
